@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <properties>
+    <my.group.id>br.cefet-rj.eic</my.group.id>
+    <spark.daily>-SNAPSHOT</spark.daily>
+    <!-- spark.version>2.3.0${spark.daily}</spark.version  -->
+    <spark.version>2.2.1</spark.version>
+    <project.version>1.0.0</project.version>
+  </properties>
+  
+  <parent>
+    <groupId>br.cefet-rj.eic</groupId>
+    <artifactId>scala-parent</artifactId>
+    <version>1.0.0</version>
+    <!-- relativePath>parent/pom.xml</relativePath  -->
+  </parent>
+
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>scala-journey</artifactId>
+  <packaging>jar</packaging>
+  <name>Functional Programming using Scala</name>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.scala-lang</groupId>
+      <artifactId>scala-library</artifactId>
+      <version>${scala.complete.version}</version>
+      <!-- scope>provided</scope -->
+    </dependency>
+    <dependency>
+      <groupId>com.lihaoyi</groupId>
+      <artifactId>ammonite-sshd_2.11.8</artifactId>
+      <version>1.0.3-10-4311ac9</version>
+      <!-- scope>provided</scope -->
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <configuration>
+          <archive>
+            <manifest>
+              <mainClass>eic.RunAll</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
